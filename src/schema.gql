@@ -17,15 +17,25 @@ type Query {
 
   """Esta query muestra numeros Random, con Argumentos"""
   randomNumberToZero(to: Int): Int!
-  todos: [Todos!]!
+  todos(status: Boolean): [Todos!]!
   Todo(id: Int!): Todos!
 }
 
 type Mutation {
   createTodo(createTodoInput: CreateTodo!): Todos!
+  updateTodo(updateTodoInput: UpdateTodo!): Todos!
+  deleteTodo(id: Int!): Boolean!
 }
 
 input CreateTodo {
   """What need to be done"""
   description: String!
+}
+
+input UpdateTodo {
+  id: Int!
+
+  """What need to be done"""
+  description: String
+  done: Boolean
 }
