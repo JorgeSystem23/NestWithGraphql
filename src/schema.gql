@@ -5,6 +5,10 @@
 type Query {
   """Hola Mundo es lo que retorna"""
   hello: String!
+
+  """Esta query muestra numeros Random"""
   RandomNumber: Float!
+
+  """Esta query muestra numeros Random, con Argumentos"""
   randomNumberToZero(to: Int): Int!
 }

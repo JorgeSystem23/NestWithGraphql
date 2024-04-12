@@ -10,12 +10,12 @@ export class HelloWorldResolver {
     return "Hello World";
   }
 
-  @Query(() => Float, { name: "RandomNumber" })
+  @Query(() => Float, { description: 'Esta query muestra numeros Random', name: "RandomNumber" })
   getRandomNumber(): number {
     return Math.random() * 100;
   }
 
-  @Query(() => Int, { name: "randomNumberToZero" })
+  @Query(() => Int, { description: 'Esta query muestra numeros Random, con Argumentos', name: "randomNumberToZero" })
   getRandomNumberToZero(
     @Args("to", { nullable: true, type: () => Int }) to: number
   ): number {
